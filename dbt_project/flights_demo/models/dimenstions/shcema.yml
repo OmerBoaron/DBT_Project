@@ -1,0 +1,25 @@
+models:
+  - name: dim_aircraft
+    columns:
+     - name: dim_aircraft
+       description: "aircraft information"
+       tests:
+        - unique
+        - not_null
+
+  - name: dim_airports
+    columns:
+     - name: dim_airports
+       description: "airport information"
+       tests:
+        - unique
+        - not_null              
+
+sources:
+  - name: flights_demo
+    database: flights_demo
+    schema: stg
+    tables:
+      - name: seats
+      - name: aircrafts_data
+      - name: airports_data
